@@ -18,7 +18,7 @@ Use a **UNION** to **stack multiple tables** or queries on top of one another
 **TIP:**
 If you know there are no duplicate values in the two tables you're combining a UNION ALL will run much faster than a UNION.
 
-**ASSIGNMENT: Multi-table Analysis**
+<h3>ASSIGNMENT: Multi-table Analysis</h3>
 
 1. We've learned that there is a discrepancy between our orders and products tables in the candy database. Could you use your JOIN knowledge to figure out which product exist in one table, but no the other?
      | MySQL Query | Result |
@@ -47,7 +47,22 @@ Keywords like **ANY**, **ALL**, and **EXISTS** can provide more specific filteri
 - Interpreting nested subqueries can be overwhelming, so start from the inner subqueries and work your way out or use CTE instead.
 - Using subqueries within the JOIN clause is great for **speeding up queries**, since it allows you to join smaller tables.
 
-**ASSIGNMENT: Subqueries and CTEs**
+A **Common Table Expression (CTE)** creates a named, temporary output that can be referenced within another query.
+CTE need to start with the "**WITH**" keyword, followed by **the alias** the "**AS**" keyword, and the query between **parentheses**
+WHY USE CTE instead SUBQUERIES:
+1. Readability: Complex queries with CTE's are much easier to read.
+2. Reusability: CTE's can be referenced multiple times within a query
+3. Recursiveness: CTE's can handle recursive queries
+
+Unlike subqueries, CTE's can be referenced multiple times within a query which helps avoid repeating code.
+
+Despite all this, you shouldn't forget about subqueries:
+- Most modern RDBMS support CTE, but not all of them do.
+- For simple subqueries, sometimes a subquery is readable enough and works just fine.
+
+You can use **multiple CTEs in a query** and even combine them with subqueries. You can using multiple CTEs by using **a single "WITH"** keyword to create two CTEs and they are spearated by a "**COMMA (,)**"
+
+<h3>ASSIGNMENT: Subqueries and CTEs</h3>
 
 1. ASSIGNMENT: Subqueries in the **SELECT** Clause
 - Our product team plans on evaluating our product prices later this week to see if any adjustments need to be made for nest year.
@@ -69,3 +84,9 @@ Can you help us identify products that have a unit price less than the unit pric
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec5.assignment3_query.png) | ![](/assets/sec5.assignment3_output.png) |
+
+4. ASSIGNMENT: **CTES**
+- The sales director wants a list of our biggest orders. In addition to sending over a list of all the orders over $200, could you also tell him the number of orders over $200?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec5.assignment4_query.png) | ![](/assets/sec5.assignment4_output.png) |
