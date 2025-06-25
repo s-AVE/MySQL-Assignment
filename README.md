@@ -12,8 +12,8 @@ this is MYSQL ASSIGNMENT
    Use JOIN to combine two tables based on common values in a column(s)
    - The tables must have at least one column with matching values
    - Basic JOIN options include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+   
    A. We've learned that there is a discrepancy between our orders and products tables in the candy database. Could you use your JOIN knowledge to figure out which product exist in one table, but no the other?
-
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec4.assignment1_query.png) | ![](/assets/sec4.assignment1_output.png) |
