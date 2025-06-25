@@ -29,3 +29,43 @@ If you know there are no duplicate values in the two tables you're combining a U
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec4.assignment2_query.png) | ![](/assets/sec4.assignment2_output.png) |
+
+## 2. **SUBQUERY and CTEs**
+A **Subquery** is **a query nested** within a main query and is typically used for solving a problem in multiple steps.
+Subqueries can occur in **multiple places** within a query:
+- calculation in the **SELECT** clause,
+- As part of a **JOIN** in the **FROM** clause,
+- Filtering in the **WHERE** and **HAVING** clauses.
+
+Queries can contain multiple subqueries as long as each one has a different alias ("**AS**").
+Keywords like **ANY**, **ALL**, and **EXISTS** can provide more specific filtering logic.
+- ANY (**at least one** value in the list);
+- ALL (**every** value in the list);
+- EXISTS (correlated subqueries can be rewritten as **INNER JOINs to run faster**).
+
+**TIPS:**
+- Interpreting nested subqueries can be overwhelming, so start from the inner subqueries and work your way out or use CTE instead.
+- Using subqueries within the JOIN clause is great for **speeding up queries**, since it allows you to join smaller tables.
+
+**ASSIGNMENT: Subqueries and CTEs**
+
+1. ASSIGNMENT: Subqueries in the **SELECT** Clause
+- Our product team plans on evaluating our product prices later this week to see if any adjustments need to be made for nest year.
+Can you give me a list of our products from most to least expensive, along with how much each product differs from the average unit price?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec5.assignment1_query.png) | ![](/assets/sec5.assignment1_output.png) |
+
+2. ASSIGNMENT: Subqueries in the **FROM** Clause
+- Our inventory management team would like to review the products produced by each factory.
+Can you give me a list of our factories, along with the names of the products they produce and the number of products they produce?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec5.assignment2_query.png) | ![](/assets/sec5.assignment2_output.png) |
+
+3. ASSIGNMENT: Subqueries in the **WHERE** Clause
+- Our Wicked Choccy's factory has some extra badwidth and we'd like to see if there are any lower priced products that they can help produce going forward.
+Can you help us identify products that have a unit price less than the unit price of all products from Wicked Choccy's? Please include which factory is currently producing them as well.
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec5.assignment3_query.png) | ![](/assets/sec5.assignment3_output.png) |
