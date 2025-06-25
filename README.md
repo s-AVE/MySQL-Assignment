@@ -1,4 +1,4 @@
-# MYSQL ASSIGNMENT
+# Maven Analystic: MySQL Assignment
 
 ![](header.png)
 
