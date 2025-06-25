@@ -5,8 +5,9 @@
 
 ## 1. **Multi-table Analysis**
 There are two ways to combine multiple tables into a single table for analysis:
-a. **JOIN** add related columns from one table to another, based on common columns.
-b. **UNION** stacks the rows from multiple tables with the same column structure.
+- **JOIN** add related columns from one table to another, based on common columns.
+- **UNION** stacks the rows from multiple tables with the same column structure.
+
 
 Use **JOIN** to combine two tables based on common values in a column(s)
 - The tables must have at least one column with matching values
