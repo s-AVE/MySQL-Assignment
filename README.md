@@ -61,7 +61,7 @@ Despite all this, you shouldn't forget about subqueries:
 - Most modern RDBMS support CTE, but not all of them do.
 - For simple subqueries, sometimes a subquery is readable enough and works just fine.
 
-You can use **multiple CTEs in a query** and even combine them with subqueries. You can using multiple CTEs by using **a single "WITH"** keyword to create two CTEs and they are spearated by a "**COMMA (,)**"
+You can use **multiple CTEs in a query** and even combine them with subqueries. You can using multiple CTEs by using **a single "WITH"** keyword to create two CTEs and they are spearated by a "**COMMA (,)**".
 
 <h3>ASSIGNMENT: Subqueries and CTEs</h3>
 
@@ -91,3 +91,19 @@ Can you help us identify products that have a unit price less than the unit pric
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec5.assignment4_query.png) | ![](/assets/sec5.assignment4_output.png) |
+
+5. ASSIGNMENT: **Multiple CTES**
+- Our inventory management team would like to review the products produced by each factory. Can you give me a list of our factories, along with the name of the products they produce and the number of products they produce?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec5.assignment5_query.png) | ![](/assets/sec5.assignment5_output.png) |
+
+
+## 3. **Window Functions**
+Window functions are used to apply a function to a "window" of data
+- Windows are essentially groups of rows of data
+
+**AGGREGATE vs WINDOW FUNCTIONS**.
+How are window functions different than a GROUP BY?
+- Aggregate functions collapse the rows in each group and apply a calculation.
+- Window functions leave the rows as they are and apply calculations by window.
