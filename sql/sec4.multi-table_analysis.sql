@@ -7,8 +7,8 @@ product exist in one table, but no the other?
 */
 SELECT
 	pd.product_id
-    ,pd.product_name
-    ,ord.product_id
+	,pd.product_name
+ 	,ord.product_id
 FROM
 	products AS pd
 LEFT JOIN 
@@ -29,10 +29,10 @@ and return a list of all the candy pairs.
 */
 SELECT
 	pd1.product_name
-    ,pd1.unit_price
-    ,pd2.product_name
-    ,pd2.unit_price
-    ,(pd1.unit_price - pd2.unit_price) AS price_diff
+	,pd1.unit_price
+	,pd2.product_name
+	,pd2.unit_price
+	,(pd1.unit_price - pd2.unit_price) AS price_diff
 FROM
 	products AS pd1
 CROSS JOIN
@@ -41,6 +41,6 @@ WHERE
 	ABS(pd1.unit_price - pd2.unit_price) < 0.25
     -- (pd1.unit_price - pd2.unit_price) BETWEEN -0.25 AND 0.25
     AND
-    pd1.product_id <> pd2.product_id -- is not equal
+	pd1.product_id <> pd2.product_id -- is not equal
 ORDER BY
-    price_diff DESC;
+	price_diff DESC;
