@@ -6,7 +6,7 @@ can you give me a list of our products from most to least expensive,
 along with how much each product differs from the average unit price?
 */
 SELECT 
-	product_id
+    product_id
     ,product_name,
     unit_price
     ,(
@@ -20,7 +20,7 @@ SELECT
                 AVG(unit_price) 
             FROM 
                 products
-            ),2) AS different_price
+	),2) AS different_price
 FROM
 	products
 ORDER BY
@@ -43,16 +43,16 @@ FROM
 	products AS pd
 LEFT JOIN (
     SELECT 
-		factory 
-		,COUNT(product_name) AS num_product
-	FROM 
-		products
-	GROUP BY 
+	factory 
+	,COUNT(product_name) AS num_product
+    FROM 
+	products
+    GROUP BY 
         factory
-	) AS num_product
+    ) AS num_product
 ON pd.factory = num_product.factory
 ORDER BY 
-	pd.factory
+    pd.factory
     ,pd.product_name;
 
 -- ASSIGNMENT: Subqueries in the WHERE Clause
@@ -67,17 +67,18 @@ Please include which factory is currently producing them as well.
 
 SELECT *
 FROM 
-	products AS pd
+    products AS pd
 WHERE 
-	unit_price < ALL(
-		SELECT 
-			unit_price
+    unit_price < ALL(
+	SELECT 
+		unit_price
         FROM
-			products
-		WHERE
-			factory = "Wicked Choccy's"
+		products
+    	WHERE
+		factory = "Wicked Choccy's"
         )
-ORDER BY pd.unit_price;
+ORDER BY 
+    pd.unit_price;
 
 -- ASSIGNMENT: CTEs
 /*
@@ -86,26 +87,27 @@ In addition to sending over a list of all the orders over $200,
 could you also tell him the number of orders over $200?
 */
 WITH sales AS (
-	SELECT
+    SELECT
 		ord.order_id
 		,ord.product_id
 		,pd.product_name
 		,ord.units
 		,pd.unit_price
 		,units * unit_price AS sale
-	FROM orders AS ord
-	LEFT JOIN (
+    FROM 
+	orders AS ord
+    LEFT JOIN (
 		SELECT *
 		FROM
 			products
 		) AS pd
-	ON
-		ord.product_id = pd.product_id
-	)
+    ON
+	ord.product_id = pd.product_id
+    )
     
 SELECT 
-	order_id, 
-	SUM(sale) AS spending
+	order_id 
+	,SUM(sale) AS spending
 FROM 
 	sales
 GROUP BY 
@@ -139,14 +141,14 @@ WITH pd AS (
 	)
 
 SELECT
-	pd.factory
+    pd.factory
     ,pd.product_name
     ,num_of_product.num_pro
 FROM 
-	pd
+    pd
 LEFT JOIN
-	num_of_product
+    num_of_product
 ON
-	pd.factory = num_of_product.factory
+    pd.factory = num_of_product.factory
 ORDER BY
-	pd.factory;
+    pd.factory;
