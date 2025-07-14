@@ -6,15 +6,15 @@ the transaction number of each customer as well.
 Could you help us do this using window functions?
 */
 SELECT
-	customer_id
+    customer_id
     ,order_id
     ,transaction_id
     ,order_id
     ,ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS num_trans_by_cust
 FROM
-	orders
+    orders
 ORDER BY
-	customer_id;
+    customer_id;
 
 
 -- ASSIGNMENT: Row Numbering
@@ -27,53 +27,53 @@ what they'd like the ranking to look like.
 
 WITH sales AS (
 	SELECT 
-		ord.order_date
-        ,ord.order_id
-        ,ord.product_id
-		,pd.product_name
-		,ord.units
+	    ord.order_date
+	    ,ord.order_id
+	    ,ord.product_id
+	    ,pd.product_name
+	    ,ord.units
 	FROM
-		orders AS ord
+	    orders AS ord
 	LEFT JOIN
-		products AS pd
+	    products AS pd
 	ON
-		ord.product_id = pd.product_id
+	    ord.product_id = pd.product_id
 	)
 
 SELECT 
-	order_date
+    order_date
     ,product_name
     ,units
     ,DENSE_RANK() OVER(PARTITION BY order_date ORDER BY units DESC) AS rank_sale
 FROM 
-	sales
+    sales
 ORDER BY
-	order_date
+    order_date
     ,rank_sale;
 
 -- PRODUCT RANKING in SALE
 WITH sales AS (    
 	SELECT 
-		ord.product_id
-        ,pd.product_name
-		,SUM(units) as unit_sale
+	    ord.product_id
+	    ,pd.product_name
+	    ,SUM(units) as unit_sale
 	FROM 
-		orders AS ord
+	    orders AS ord
 	LEFT JOIN
-		products AS pd
+	    products AS pd
 	ON 
-		ord.product_id = pd.product_id
+	    ord.product_id = pd.product_id
 	GROUP BY
-		product_id
+	    product_id
 	)
 
 SELECT 
-	product_id
+    product_id
     ,product_name
     ,unit_sale
     ,RANK() OVER(ORDER BY unit_sale DESC) AS rank_sale
 FROM
-	sales;
+    sales;
 
 
 -- ASSIGNMENT: Value within a Window
@@ -84,29 +84,29 @@ increase units sold within each order
 */
 WITH sales AS (
 	SELECT
-		ord.order_id
-		,ord.product_id
-		,pd.product_name
-		,ord.units
-        ,DENSE_RANK() OVER(PARTITION BY order_id ORDER BY units DESC) AS ranking
+	    ord.order_id
+	    ,ord.product_id
+	    ,pd.product_name
+	    ,ord.units
+	    ,DENSE_RANK() OVER(PARTITION BY order_id ORDER BY units DESC) AS ranking
 	FROM
-		orders AS ord
+	    orders AS ord
 	LEFT JOIN
-		products AS pd
+	    products AS pd
 	ON
-		ord.product_id = pd.product_id
+	    ord.product_id = pd.product_id
     )
     
 SELECT 
-	order_id
+    order_id
     ,product_id
     ,product_name
     ,units
     -- ,ranking
 FROM 
-	sales
+    sales
 WHERE
-	ranking = 2;
+    ranking = 2;
 
 
 -- ASSIGNMENT: Value Relative to a Row
@@ -118,26 +118,26 @@ the number of units in each order, and the change in units from order to order?
 
 
 WITH prior_units_buying AS (
-		SELECT
-		customer_id
-		,order_date
-		,sum(units) AS total_units
-		,LAG(sum(units)) OVER(PARTITION BY customer_id ORDER BY order_date) AS prior_units
+	SELECT
+	    customer_id
+	    ,order_date
+	    ,sum(units) AS total_units
+	    ,LAG(sum(units)) OVER(PARTITION BY customer_id ORDER BY order_date) AS prior_units
 	FROM 
-		orders
+	    orders
 	GROUP BY
-		customer_id
-		,order_date
+	    customer_id
+	    ,order_date
 	)
     
 SELECT 
-	customer_id
-	,order_date
-	,total_units
+    customer_id
+    ,order_date
+    ,total_units
     ,prior_units
     ,total_units - prior_units AS buying_change
 FROM
-	prior_units_buying;
+    prior_units_buying;
 
 
 -- ASSIGNMENT: Statistical Functions
@@ -147,41 +147,41 @@ Could you pull a list of the top 1% of customers in terms of how much they've sp
 */
 WITH cte_table AS (
 	SELECT 
-		ord.customer_id
-		,SUM(ord.units * pd.unit_price) AS spending
+	    ord.customer_id
+	    ,SUM(ord.units * pd.unit_price) AS spending
 	FROM
-		orders AS ord
+	    orders AS ord
 	LEFT JOIN
-		products AS pd
+	    products AS pd
 	ON 
-		ord.product_id = pd.product_id
+	    ord.product_id = pd.product_id
 	GROUP BY
-		ord.customer_id
+	    ord.customer_id
 	ORDER BY
-		spending
+	    spending
 	)
 	
     ,cte_table2 AS (    
 	SELECT 
-		*
-		,NTILE(100) OVER(ORDER BY spending DESC) AS top_cust
+	    *
+	    ,NTILE(100) OVER(ORDER BY spending DESC) AS top_cust
 	FROM
-		cte_table
+	    cte_table
 	)
 
 SELECT
-	customer_id
+    customer_id
     ,spending
 FROM
-	cte_table2
+    cte_table2
 WHERE
-	top_cust = 1;
+    top_cust = 1;
 
 -- PREVIEW: Moving Average
 SELECT
-	country
+    country
     ,year
     ,happiness_score
     ,AVG(happiness_score) OVER(PARTITION BY country ORDER BY year ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS three_year_ma
 FROM
-	happiness_scores;
+    happiness_scores;
