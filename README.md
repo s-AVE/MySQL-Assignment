@@ -158,7 +158,7 @@ The function portion of a window function in applied to each window
      |----------|----------|
      | ![](/assets/sec6.assignment6_query.png) | ![](/assets/sec6.assignment6_output.png) |
 
-## 3. **Functions by Data Type**
+## 4. **Functions by Data Type**
 Window functions are used to apply a function to a "window" of data
 - Windows are essentially groups of rows of data
 - Aggregate functions collapse the rows in each group, but window functions leave the rows untouched.
