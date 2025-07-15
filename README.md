@@ -123,37 +123,37 @@ The function portion of a window function in applied to each window
 
 <h3>ASSIGNMENT: Window Functions</h3>
 
-1. ASSIGNMENT: Window Function Basics
+1. ASSIGNMENT: **Window Function Basics**
 - We currently have an orders report with customer, order and transaction IDs, and we would like to add an additional column that contains the transaction number of each customer as well. Could you help us do this using window functions?
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment1_query.png) | ![](/assets/sec6.assignment1_output.png) |
 
-2. ASSIGNMENT: Row Numbering
+2. ASSIGNMENT: **Row Numbering**
 - Our product team would like to know which products are most popular within each day. Could you create a product rank field that returns a 1 for the most popular product in an order, 2 for second most, and so on? Please take a look at the results preview to get an idea of what they'd like the ranking to look like.
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment2_query.png) | ![](/assets/sec6.assignment2_output.png) |
 
-3. ASSIGNMENT: Value within a Window
+3. ASSIGNMENT: **Value within a Window**
 - Could you specifically give me a list of the 2nd most popular product within each order? The sales team is going to try to see if they can bundle them with some other products to increase units sold within each order
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment3_query.png) | ![](/assets/sec6.assignment3_output.png) |
 
-4. ASSIGNMENT: Value Relative to a Row
+4. ASSIGNMENT: **Value Relative to a Row**
 - We'd like to look into how orders have changed over time for each customer. Could you produce a table that contains info about each customer and their orders, the number of units in each order, and the change in units from order to order?
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment4_query.png) | ![](/assets/sec6.assignment4_output.png) |
 
-5. ASSIGNMENT: Value Relative to a Row
+5. ASSIGNMENT: **Value Relative to a Row**
 - The customer engagement team would like to create a rewards program for our top 1% of customers. Could you pull a list of the top 1% of customers in terms of how much they've spent with us?
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment5_query.png) | ![](/assets/sec6.assignment5_output.png) |
 
-6. ASSIGNMENT: Moving Average **[PREVIEW]**
+6. ASSIGNMENT: **Moving Average** **[PREVIEW]**
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec6.assignment6_query.png) | ![](/assets/sec6.assignment6_output.png) |
