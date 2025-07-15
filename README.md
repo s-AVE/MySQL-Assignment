@@ -159,6 +159,43 @@ The function portion of a window function in applied to each window
      | ![](/assets/sec6.assignment6_query.png) | ![](/assets/sec6.assignment6_output.png) |
 
 ## 4. **Functions by Data Type**
-Window functions are used to apply a function to a "window" of data
-- Windows are essentially groups of rows of data
-- Aggregate functions collapse the rows in each group, but window functions leave the rows untouched.
+A function applies a calculation or transformation to rows of data
+- An aggregate function applies a calculation to all rows an returns a single value (COUNT, SUM, etc.)
+- A window function performs a calculation across a window of rows (OVER(), PARTITION BY, etc.)
+- A general function performs a calculation or transformation on all rows
+Specific functions can be applied to specific data types
+- If needed, you can CAST or CONVERT a field into a different data type to apply a particular function
+- Common numeric functions include LOG(), ROUND(), etc.
+- Common datetime functions include YEAR(), DATEDIFF(), etc.
+- Common string functions include TRIM(), REPLACE(), REGEXP(), etc.
+- Common NULL functions include IFNULL(), COALESCE(), etc.
+
+1. ASSIGNMENT: **Numeric Functions**
+- Our market research team is interested in seeing how many customers have spent $0 - $10 on our products, $10 - $20, and so on for every $10 range. Could you generate this table for them?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment1_query.png) | ![](/assets/sec7.assignment1_output.png) |
+  
+2. ASSIGNMENT: **Datetime Functions**
+- The market research team wants to do a deep dive on the Q2 2024 orders data we currently have. Can you pull that data for them? In addition, they also requested that we include a ship_date column for them that's 2 days after the order_date.
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment2_query.png) | ![](/assets/sec7.assignment2_output.png) |
+
+3. ASSIGNMENT: **String Functions**
+- We're updating our product_id's to include the factory name and product name. Could you write the SQL code to produce this?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment3_query.png) | ![](/assets/sec7.assignment3_output.png) |
+
+4. ASSIGNMENT: **String Functions**
+- The marketing team has kicked off an initiative to simplify our product names, starting with our Wonka Bars products. Could you remove "Wonka Bar" from any products that contain the term?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment4_query.png) | ![](/assets/sec7.assignment4_output.png) |
+
+5. ASSIGNMENT: **NULL FUNCTIONS**
+- Sugar Shack and The Other Factory just added two new products that don't have divisions assigned to them. For simplicity's sake, could you update those NULL values to have a value of "Other"? Here's an extra challenge for you - instead of updating them to "Other",  could you update them to be the same division as the most common division within their respective factories
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
