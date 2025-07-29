@@ -39,7 +39,7 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
 >[!TIP]
 > If you know there are no duplicate values in the two tables you're combining a `UNION ALL` will run much faster than a `UNION`.
 
-<h3>ASSIGNMENT: Multi-table Analysis</h3>
+### ASSIGNMENT: Multi-table Analysis - [View SQL File](sql/sec4.multi-table_analysis.sql)
 
 1. ASSIGNMENT: **Basic Join**
 - We've learned that there is a discrepancy between our orders and products tables in the candy database.  
@@ -88,7 +88,7 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
 > - For simple subqueries, sometimes a subquery is readable enough and works just fine.
 
 
-<h3>ASSIGNMENT: Subqueries and CTEs</h3>
+### ASSIGNMENT: Subqueries and CTEs - [View SQL File](sql/sec5.subqueries_and_ctes.sql)
 
 1. ASSIGNMENT: **Subqueries in the `SELECT` Clause**
 - Our product team plans on evaluating our product prices later this week to see if any adjustments need to be made for nest year.  
@@ -147,7 +147,7 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
      - You can use statistical functions like `NTILE()` for making percentile calculations
      - You can use aggregate functions like `AVG()` for making moving average calculations
 
-<h3>ASSIGNMENT: Window Functions</h3>
+### ASSIGNMENT: Window Functions - [View SQL File](sql/sec6.window_function_basics.sql)
 
 1. ASSIGNMENT: **Window Function Basics**
 - We currently have an orders report with customer, order and transaction IDs, and we would like to add an additional column that contains the transaction number of each customer as well. Could you help us do this using window functions?
@@ -200,6 +200,8 @@ Specific functions can be applied to specific data types
 - Common string functions include `TRIM()`, `REPLACE()`, `REGEXP()`, etc.
 - Common NULL functions include `IFNULL()`, `COALESCE()`, etc.
 
+### ASSIGNMENT: Functions by Data Type - [View SQL File](sql/sec7.functions_by_data_type.sql)
+
 1. ASSIGNMENT: **Numeric Functions**
 - Our market research team is interested in seeing how many customers have spent $0 - $10 on our products, $10 - $20, and so on for every $10 range.  
   Could you generate this table for them?
@@ -248,7 +250,7 @@ Specific functions can be applied to specific data types
 - There are many options for imputing NULL values, or filling in missing data
      - Option include hard coded values, column aggregations, relative row values, and more  
 
-Query Assignment 5 (Data Analysis Applications) [view SQL File](sql/sec8.data_analysis_applications.sql).
+### ASSIGNMENT: Data Analysis Applications - [View SQL File](sql/sec8.data_analysis_applications.sql)
 
 1. ASSIGNMENT: **Duplicate Values**
 - We've learned that there's a student who's showing up multiple times in our student records.  
