@@ -11,16 +11,16 @@ This repository serves both as a personal learning milestone and a reference poi
 📁 1. [Multi-table Analysis](#1-multi-table-analysis)  
 Basic Join and Self Join
 
-📁 2. [Subquery and CTE](2-subquery-and-ctes)  
+📁 2. [Subquery and CTE](#2-subquery-and-ctes)  
 Subqueries in the `SELECT` Clause, Subqueries in the `FROM` Clause, Subqueries in the `WHERE` Clause, CTE and Multiple CTE.
 
-📁 3. [Window Functions](3wWindow-functions)  
+📁 3. [Window Functions](#3-Window-functions)  
 Window Function Basic, Row Numbering, Value within a Window, Value Relative to a Row,  and Statistical Functions
 
-📁 4. [Funtions by Data Type](4-functions-by-data-type)  
+📁 4. [Funtions by Data Type](#4-functions-by-data-type)  
 Numeric Functions, Datetime Functions, String Functions, Pattern Functions, and NULL Functions
 
-📁 5. [Data Analysis Applications](5-data-analysis-applications)  
+📁 5. [Data Analysis Applications](#5-data-analysis-applications)  
 Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NULL Values
 
 ## 1. Multi-table Analysis
