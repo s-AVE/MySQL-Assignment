@@ -283,7 +283,7 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
      |----------|----------|
      | ![](/assets/sec8.assignment3_query.png) | ![](/assets/sec8.assignment3_output.png) |
 
-3. ASSIGNMENT: **Rolling Calculation**
+4. ASSIGNMENT: **Rolling Calculation**
 - Can you help us generate a report that shows the total sales for each month,  
   as well as the cumulative sum of sales and the six-month moving average of sales??
      | MySQL Query | Result |
