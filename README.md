@@ -5,13 +5,13 @@
 
 ## 1. **Multi-table Analysis**
 There are two ways to combine multiple tables into a single table for analysis:
-- **JOIN** add related columns from one table to another, based on common columns.
-- **UNION** stacks the rows from multiple tables with the same column structure.
+- `JOIN` add related columns from one table to another, based on common columns.
+- `UNION` stacks the rows from multiple tables with the same column structure.
 
 
 Use **JOIN** to combine two tables based on common values in a column(s)
 - The tables must have at least one column with matching values
-- Basic JOIN options include INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+- Basic JOIN options include `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, and `FULL OUTER JOIN`.
 
 Use a **UNION** to **stack multiple tables** or queries on top of one another
 - **UNION removes duplicate values**, while **UNION ALL retains them**
@@ -35,11 +35,11 @@ If you know there are no duplicate values in the two tables you're combining a U
 A **Subquery** is **a query nested** within a main query and is typically used for solving a problem in multiple steps.
 Subqueries can occur in **multiple places** within a query:
 - calculation in the **SELECT** clause,
-- As part of a **JOIN** in the **FROM** clause,
-- Filtering in the **WHERE** and **HAVING** clauses.
+- As part of a `JOIN` in the `FROM` clause,
+- Filtering in the `WHERE` and `HAVING` clauses.
 
-Queries can contain multiple subqueries as long as each one has a different alias ("**AS**").
-Keywords like **ANY**, **ALL**, and **EXISTS** can provide more specific filtering logic.
+Queries can contain multiple subqueries as long as each one has a different alias ("`AS`").
+Keywords like `ANY`, `ALL`, and `EXISTS` can provide more specific filtering logic.
 - ANY (**at least one** value in the list);
 - ALL (**every** value in the list);
 - EXISTS (correlated subqueries can be rewritten as **INNER JOINs to run faster**).
@@ -61,25 +61,25 @@ Despite all this, you shouldn't forget about subqueries:
 - Most modern RDBMS support CTE, but not all of them do.
 - For simple subqueries, sometimes a subquery is readable enough and works just fine.
 
-You can use **multiple CTEs in a query** and even combine them with subqueries. You can using multiple CTEs by using **a single "WITH"** keyword to create two CTEs and they are spearated by a "**COMMA (,)**".
+You can use **multiple CTEs in a query** and even combine them with subqueries. You can using multiple CTEs by using **a single `WITH` keyword to create two CTEs and they are spearated by a "**COMMA (,)**".
 
 <h3>ASSIGNMENT: Subqueries and CTEs</h3>
 
-1. ASSIGNMENT: Subqueries in the **SELECT** Clause
+1. ASSIGNMENT: Subqueries in the `SELECT` Clause
 - Our product team plans on evaluating our product prices later this week to see if any adjustments need to be made for nest year.
 Can you give me a list of our products from most to least expensive, along with how much each product differs from the average unit price?
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec5.assignment1_query.png) | ![](/assets/sec5.assignment1_output.png) |
 
-2. ASSIGNMENT: Subqueries in the **FROM** Clause
+2. ASSIGNMENT: Subqueries in the `FROM` Clause
 - Our inventory management team would like to review the products produced by each factory.
 Can you give me a list of our factories, along with the names of the products they produce and the number of products they produce?
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec5.assignment2_query.png) | ![](/assets/sec5.assignment2_output.png) |
 
-3. ASSIGNMENT: Subqueries in the **WHERE** Clause
+3. ASSIGNMENT: Subqueries in the `WHERE` Clause
 - Our Wicked Choccy's factory has some extra badwidth and we'd like to see if there are any lower priced products that they can help produce going forward.
 Can you help us identify products that have a unit price less than the unit price of all products from Wicked Choccy's? Please include which factory is currently producing them as well.
      | MySQL Query | Result |
@@ -105,21 +105,21 @@ Window functions are used to apply a function to a "window" of data
 - Aggregate functions collapse the rows in each group, but window functions leave the rows untouched.
 
 **AGGREGATE vs WINDOW FUNCTIONS**.
-How are window functions different than a GROUP BY?
+How are window functions different than a `GROUP BY`?
 - Aggregate functions collapse the rows in each group and apply a calculation.
 - Window functions leave the rows as they are and apply calculations by window.
 
-The general syntax is function OVER(PARTITION BY columnX ORDER BY columnY)
-- OVER indicates that we're writing a window function
-- PARTITION BY states how we'd like to split up the rows into groups
-- ORDER BY states how the rows within each window should be ordered before applying the function
+The general syntax is function `OVER(PARTITION BY columnX ORDER BY columnY)`
+- `OVER` indicates that we're writing a window function
+- `PARTITION BY` states how we'd like to split up the rows into groups
+- `ORDER BY` states how the rows within each window should be ordered before applying the function
 
 The function portion of a window function in applied to each window
-- You can number rows with ROW_NUMBER(), RANK(), and DENSE_RANK()
-- You can identify values within a window with FIRST_VALUE(), LAST_VALUE(), and NTH_VALUE()
-- You can returns values from relative rows with LEAD() and LAG()
-- You can use statistical functions like NTILE() for making percentile calculations
-- You can use aggregate functions like AVG() for making moving average calculations
+- You can number rows with `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()`
+- You can identify values within a window with `FIRST_VALUE()`, `LAST_VALUE()`, and `NTH_VALUE()`
+- You can returns values from relative rows with `LEAD()` and `LAG()`
+- You can use statistical functions like `NTILE()` for making percentile calculations
+- You can use aggregate functions like `AVG()` for making moving average calculations
 
 <h3>ASSIGNMENT: Window Functions</h3>
 
@@ -160,15 +160,15 @@ The function portion of a window function in applied to each window
 
 ## 4. **Functions by Data Type**
 A function applies a calculation or transformation to rows of data
-- An aggregate function applies a calculation to all rows an returns a single value (COUNT, SUM, etc.)
-- A window function performs a calculation across a window of rows (OVER(), PARTITION BY, etc.)
+- An aggregate function applies a calculation to all rows an returns a single value (`COUNT()`, `SUM()`, etc.)
+- A window function performs a calculation across a window of rows (`OVER()`, `PARTITION BY`, etc.)
 - A general function performs a calculation or transformation on all rows
 Specific functions can be applied to specific data types
 - If needed, you can CAST or CONVERT a field into a different data type to apply a particular function
-- Common numeric functions include LOG(), ROUND(), etc.
-- Common datetime functions include YEAR(), DATEDIFF(), etc.
-- Common string functions include TRIM(), REPLACE(), REGEXP(), etc.
-- Common NULL functions include IFNULL(), COALESCE(), etc.
+- Common numeric functions include `LOG()`, `ROUND()`, etc.
+- Common datetime functions include `YEAR()`, `DATEDIFF()`, etc.
+- Common string functions include `TRIM()`, `REPLACE()`, `REGEXP()`, etc.
+- Common NULL functions include `IFNULL()`, `COALESCE()`, etc.
 
 1. ASSIGNMENT: **Numeric Functions**
 - Our market research team is interested in seeing how many customers have spent $0 - $10 on our products, $10 - $20, and so on for every $10 range. Could you generate this table for them?
@@ -199,3 +199,52 @@ Specific functions can be applied to specific data types
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
+
+## 5. **Functions by Data Type**
+A) There are many ways to identify and handle duplicate values
+- Use `HAVING` to view duplicate rows and `DISTINCT` or window functions to exclude duplicate rows
+2. Min/Max value filtering allows you to filter data within each group
+- This can be accomplished with a combination of `GROUP BY` and `JOIN`, or with a window function
+Pivoting transforms row values into columns to summarize your data
+- This can be accomplished by using `CASE` statement with aggregate functions, or PIVOT in some tools
+Rolling calculations include subtotals, cumulative sums, and moving averages
+- This can be done using `WITH ROLLUP` keyword or window functions with `SUM()` and `AVG()`
+There are many options for imputing NULL values, or filling in missing data
+- Option include hard coded values, column aggregations, relative row values, and more
+
+Query Assignment 5 (Data Analysis Applications): [Link Text](#sample-section).
+
+1. ASSIGNMENT: **Numeric Functions**
+- Our market research team is interested in seeing how many customers have spent $0 - $10 on our products, $10 - $20, and so on for every $10 range. Could you generate this table for them?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec7.assignment1_query.png) | ![](/assets/sec7.assignment1_output.png) |
+
+
+
+
+
+# Example headings
+
+## Sample Section
+
+## This'll be a _Helpful_ Section About the Greek Letter Θ!
+A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
+
+## This heading is not unique in the file
+
+TEXT 1
+
+## This heading is not unique in the file
+
+TEXT 2
+
+# Links to the example headings above
+
+Link to the sample section: [Link Text](#sample-section). Link to the sample section: [Link Text](#sample-section).
+
+Link to the helpful section: [Link Text](#thisll-be-a-helpful-section-about-the-greek-letter-Θ).
+
+Link to the first non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file).
+
+Link to the second non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file-1).
