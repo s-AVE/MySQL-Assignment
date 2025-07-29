@@ -248,7 +248,7 @@ Specific functions can be applied to specific data types
 - There are many options for imputing NULL values, or filling in missing data
      - Option include hard coded values, column aggregations, relative row values, and more  
 
-Query Assignment 5 (Data Analysis Applications) [view SQL File](./sql/sec8.data_analysis_aplications.sql).
+Query Assignment 5 (Data Analysis Applications) [view SQL File](sql/sec8.data_analysis_applications.sql).
 
 1. ASSIGNMENT: **Duplicate Values**
 - We've learned that there's a student who's showing up multiple times in our student records.  
