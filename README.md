@@ -189,16 +189,25 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
      | ![](/assets/sec6.assignment6_query.png) | ![](/assets/sec6.assignment6_output.png) |
 
 ## 4. **Functions by Data Type**
-A function applies a calculation or transformation to rows of data
-- An aggregate function applies a calculation to all rows an returns a single value (`COUNT()`, `SUM()`, etc.)
-- A window function performs a calculation across a window of rows (`OVER()`, `PARTITION BY`, etc.)
-- A general function performs a calculation or transformation on all rows
-Specific functions can be applied to specific data types
-- If needed, you can CAST or CONVERT a field into a different data type to apply a particular function
-- Common numeric functions include `LOG()`, `ROUND()`, etc.
-- Common datetime functions include `YEAR()`, `DATEDIFF()`, etc.
-- Common string functions include `TRIM()`, `REPLACE()`, `REGEXP()`, etc.
-- Common NULL functions include `IFNULL()`, `COALESCE()`, etc.
+- A function applies a calculation or transformation to rows of data
+     - An aggregate function applies a calculation to all rows an returns a single value (`COUNT()`, `SUM()`, etc.)
+     - A window function performs a calculation across a window of rows (`OVER()`, `PARTITION BY`, etc.)
+     - A general function performs a calculation or transformation on all rows
+- Specific functions can be applied to specific data types
+     - If needed, you can `CAST` or `CONVERT` a field into a different data type to apply a particular function
+     - Common numeric functions include `LOG()`, `ROUND()`, etc.
+     - Common datetime functions include `YEAR()`, `DATEDIFF()`, etc.
+     - Common string functions include `TRIM()`, `REPLACE()`, `REGEXP()`, etc.
+     - Common NULL functions include `IFNULL()`, `COALESCE()`, etc.
+
+> [!NOTE]
+> Sometimes you may need **to cast columns to different data types**, so that you can utilize specific functions.
+> The `CAST` / `CONVERT` functions only change the data type for the duration of the query, not permanently
+
+> [!TIP]
+> - While SQL is case insensitive, it's a best practice to capitalize functions so they stand out, similar to clauses. If you're using a SQL editor, they will automatically be highlighted a different color.
+> - Another best practice you can implement, that is you can put comma (,) in new line before you new column. it will make you easy to identify the comma in column.
+
 
 ### ASSIGNMENT: Functions by Data Type - [View SQL File](sql/sec7.functions_by_data_type.sql)
 
@@ -237,6 +246,9 @@ Specific functions can be applied to specific data types
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
+
+  > [!TIP]
+  > > COALESCE is more flexible version of the two and will allow you to do multiple NULL checks and returns the first non-NULL value
 
 ## 5. **Data Analysis Applications**
 - There are many ways to identify and handle duplicate values
