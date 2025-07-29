@@ -245,10 +245,10 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
   could you update them to be the same division as the most common division within their respective factories
      | MySQL Query | Result |
      |----------|----------|
-     | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
+     | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |  
 
-  > [!TIP]
-  > > COALESCE is more flexible version of the two and will allow you to do multiple NULL checks and returns the first non-NULL value
+> [!TIP]
+> COALESCE is more flexible version of the two and will allow you to do multiple NULL checks and returns the first non-NULL value
 
 ## 5. **Data Analysis Applications**
 - There are many ways to identify and handle duplicate values
