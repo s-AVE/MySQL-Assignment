@@ -2,6 +2,10 @@
 
 ![](header.png)
 
+## INTRODUCTION
+This portfolio presents a collection of SQL queries developed as part of my learning journey through the Maven Analytics online course titled "SQL for Data Analysis: Advanced SQL Querying Techniques." Each query in this repository reflects the hands-on exercises and guided challenges provided within the course framework.  
+The structure and flow of the SQL problems follow the curriculum designed by the Maven Analytics team, emphasizing practical, real-world applications of advanced SQL skills — including joins, subqueries, window functions, common table expressions (CTEs), recrusive CTE, conditional aggregation, function by data type, and implementation for data analytic.  
+This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.
 
 ## 1. **Multi-table Analysis**
 - There are two ways to combine multiple tables into a single table for analysis:
