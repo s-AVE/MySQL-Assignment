@@ -195,56 +195,51 @@ Specific functions can be applied to specific data types
      | ![](/assets/sec7.assignment4_query.png) | ![](/assets/sec7.assignment4_output.png) |
 
 5. ASSIGNMENT: **NULL FUNCTIONS**
-- Sugar Shack and The Other Factory just added two new products that don't have divisions assigned to them. For simplicity's sake, could you update those NULL values to have a value of "Other"? Here's an extra challenge for you - instead of updating them to "Other",  could you update them to be the same division as the most common division within their respective factories
+- Sugar Shack and The Other Factory just added two new products that don't have divisions assigned to them.  
+  For simplicity's sake, could you update those NULL values to have a value of "Other"? Here's an extra challenge for you - instead of updating them to "Other",  could you update them to be the same division as the most common division within their respective factories
      | MySQL Query | Result |
      |----------|----------|
      | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
 
 ## 5. **Functions by Data Type**
-A) There are many ways to identify and handle duplicate values
-- Use `HAVING` to view duplicate rows and `DISTINCT` or window functions to exclude duplicate rows
+1. There are many ways to identify and handle duplicate values
+- Use `HAVING` to view duplicate rows and `DISTINCT` or window functions to exclude duplicate rows  
 2. Min/Max value filtering allows you to filter data within each group
-- This can be accomplished with a combination of `GROUP BY` and `JOIN`, or with a window function
-Pivoting transforms row values into columns to summarize your data
-- This can be accomplished by using `CASE` statement with aggregate functions, or PIVOT in some tools
-Rolling calculations include subtotals, cumulative sums, and moving averages
-- This can be done using `WITH ROLLUP` keyword or window functions with `SUM()` and `AVG()`
-There are many options for imputing NULL values, or filling in missing data
-- Option include hard coded values, column aggregations, relative row values, and more
+- This can be accomplished with a combination of `GROUP BY` and `JOIN`, or with a window function  
+3. Pivoting transforms row values into columns to summarize your data
+- This can be accomplished by using `CASE` statement with aggregate functions, or PIVOT in some tools  
+4. Rolling calculations include subtotals, cumulative sums, and moving averages
+- This can be done using `WITH ROLLUP` keyword or window functions with `SUM()` and `AVG()`  
+5. There are many options for imputing NULL values, or filling in missing data
+- Option include hard coded values, column aggregations, relative row values, and more  
 
-Query Assignment 5 (Data Analysis Applications): [Link Text](#sample-section).
+<h3>Query Assignment 5 (Data Analysis Applications): [/sql/sec8.data_analysis_aplications.sql (#sample-section). </h3>
 
-1. ASSIGNMENT: **Numeric Functions**
-- Our market research team is interested in seeing how many customers have spent $0 - $10 on our products, $10 - $20, and so on for every $10 range. Could you generate this table for them?
+1. ASSIGNMENT: **Duplicate Values**
+- We've learned that there's a student who's showing up multiple times in our student records. Can you generate a report of the students and their emails, and exclude the duplicate student record?
      | MySQL Query | Result |
      |----------|----------|
-     | ![](/assets/sec7.assignment1_query.png) | ![](/assets/sec7.assignment1_output.png) |
+     | ![](/assets/sec8.assignment1_query.png) | ![](/assets/sec8.assignment1_output.png) |
+
+2. ASSIGNMENT: **MIN / MAX Filtering**
+- Can you create a report of each student with their highest grade for the semester, as well as which class it was in?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec8.assignment2_query.png) | ![](/assets/sec8.assignment2_output.png) |
+
+3. ASSIGNMENT: **PIVOTING**
+- Can you help us create a summary table that shows the average grade for each department and grade level?
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec8.assignment3_query.png) | ![](/assets/sec8.assignment3_output.png) |
+
+3. ASSIGNMENT: **Rolling Calculation**
+- Can you help us generate a report that shows the total sales for each month, as well as the cumulative sum of sales and the six-month moving average of sales??
+     | MySQL Query | Result |
+     |----------|----------|
+     | ![](/assets/sec8.assignment4_query.png) | ![](/assets/sec8.assignment4_output.png) |
 
 
 
 
 
-# Example headings
-
-## Sample Section
-
-## This'll be a _Helpful_ Section About the Greek Letter Θ!
-A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
-
-## This heading is not unique in the file
-
-TEXT 1
-
-## This heading is not unique in the file
-
-TEXT 2
-
-# Links to the example headings above
-
-Link to the sample section: [Link Text](#sample-section). Link to the sample section: [Link Text](#sample-section).
-
-Link to the helpful section: [Link Text](#thisll-be-a-helpful-section-about-the-greek-letter-Θ).
-
-Link to the first non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file).
-
-Link to the second non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file-1).
