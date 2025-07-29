@@ -8,20 +8,19 @@ The structure and flow of the SQL problems follow the curriculum designed by the
 This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.  
 
 ## Table of Content
-📁 [1. Multi-table Analysis](#1-multi-table-analysis)
-  
+📁 1. [Multi-table Analysis](#1-multi-table-analysis)  
 Basic Join and Self Join
 
-📁 2. [Subquery and CTE](2-Subqueries-and-CTEs)  
+📁 2. [Subquery and CTE](2-SUBQUERY-and-CTEs)  
 Subqueries in the `SELECT` Clause, Subqueries in the `FROM` Clause, Subqueries in the `WHERE` Clause, CTE and Multiple CTE.
 
-📁 3. Window Functions  
+📁 3. [Window Functions](3-Window-Functions)  
 Window Function Basic, Row Numbering, Value within a Window, Value Relative to a Row,  and Statistical Functions
 
-📁 4. Funtions by Data Type  
+📁 4. [Funtions by Data Type](4-Functions-by-Data-Type)  
 Numeric Functions, Datetime Functions, String Functions, Pattern Functions, and NULL Functions
 
-📁 5. Data Analysis Applications  
+📁 5. [Data Analysis Applications](5-Data-Analysis-Applications)  
 Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NULL Values
 
 ## 1. Multi-table Analysis
