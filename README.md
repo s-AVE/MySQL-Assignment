@@ -147,7 +147,7 @@ Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NU
      - You can use statistical functions like `NTILE()` for making percentile calculations
      - You can use aggregate functions like `AVG()` for making moving average calculations
 
-### ASSIGNMENT: Window Functions - [View SQL File](sql/sec6.window_function_basics.sql)
+### ASSIGNMENT: Window Functions - [View SQL File](sql/sec6.window_function.sql)
 
 1. ASSIGNMENT: **Window Function Basics**
 - We currently have an orders report with customer, order and transaction IDs, and we would like to add an additional column that contains the transaction number of each customer as well. Could you help us do this using window functions?
