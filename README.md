@@ -5,11 +5,26 @@
 ## INTRODUCTION
 This portfolio presents a collection of SQL queries developed as part of my learning journey through the Maven Analytics online course titled "[SQL for Data Analysis: Advanced SQL Querying Techniques](https://www.udemy.com/share/10cfwd3@RpilmZbx1xxlcnvLWO-Pi7_3GnxJ-NXyvwVk2x-d2gBM9EwzR53WTViwq3sIk695/)." Each query in this repository reflects the hands-on exercises and guided challenges provided within the course framework.  
 The structure and flow of the SQL problems follow the curriculum designed by the [Maven Analytics team](https://www.udemy.com/user/maven-analytics), emphasizing practical, real-world applications of advanced SQL skills — including joins, subqueries, window functions, common table expressions (CTEs), recrusive CTE, conditional aggregation, function by data type, and implementation for data analytic.  
-This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.
+This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.  
 
-This site was built using [GitHub Pages](https://pages.github.com/)
+## Table of Content
+📁 [1. Multi-table Analysis](#1-multi-table-analysis)
+  
+Basic Join and Self Join
 
-## 1. **Multi-table Analysis**
+📁 2. [Subquery and CTE](2-Subqueries-and-CTEs)  
+Subqueries in the `SELECT` Clause, Subqueries in the `FROM` Clause, Subqueries in the `WHERE` Clause, CTE and Multiple CTE.
+
+📁 3. Window Functions  
+Window Function Basic, Row Numbering, Value within a Window, Value Relative to a Row,  and Statistical Functions
+
+📁 4. Funtions by Data Type  
+Numeric Functions, Datetime Functions, String Functions, Pattern Functions, and NULL Functions
+
+📁 5. Data Analysis Applications  
+Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NULL Values
+
+## 1. Multi-table Analysis
 - There are two ways to combine multiple tables into a single table for analysis:
      - `JOIN` add related columns from one table to another, based on common columns.
      - `UNION` stacks the rows from multiple tables with the same column structure.
@@ -162,7 +177,7 @@ This site was built using [GitHub Pages](https://pages.github.com/)
      |----------|----------|
      | ![](/assets/sec6.assignment4_query.png) | ![](/assets/sec6.assignment4_output.png) |
 
-5. ASSIGNMENT: **Value Relative to a Row**
+5. ASSIGNMENT: **Statistical Functions**
 - The customer engagement team would like to create a rewards program for our top 1% of customers.  
   Could you pull a list of the top 1% of customers in terms of how much they've spent with us?
      | MySQL Query | Result |
@@ -207,7 +222,7 @@ Specific functions can be applied to specific data types
      |----------|----------|
      | ![](/assets/sec7.assignment3_query.png) | ![](/assets/sec7.assignment3_output.png) |
 
-4. ASSIGNMENT: **String Functions**
+4. ASSIGNMENT: **Pattern Functions**
 - The marketing team has kicked off an initiative to simplify our product names, starting with our Wonka Bars products.  
   Could you remove "Wonka Bar" from any products that contain the term?
      | MySQL Query | Result |
@@ -222,7 +237,7 @@ Specific functions can be applied to specific data types
      |----------|----------|
      | ![](/assets/sec7.assignment5_query.png) | ![](/assets/sec7.assignment5_output.png) |
 
-## 5. **Functions by Data Type**
+## 5. **Data Analysis Applications**
 - There are many ways to identify and handle duplicate values
      - Use `HAVING` to view duplicate rows and `DISTINCT` or window functions to exclude duplicate rows  
 - Min/Max value filtering allows you to filter data within each group
