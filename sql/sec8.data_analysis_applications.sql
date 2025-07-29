@@ -19,8 +19,8 @@ WITH std AS (
 
 SELECT
 	id
-    ,student_name
-    ,email
+	,student_name
+	,email
 FROM
 	std
 WHERE
@@ -35,11 +35,11 @@ Can you create a report of each student with their highest grade for the semeste
 WITH std_gr AS (    
 	SELECT
 		sg.student_id
-        ,std.student_name
-        ,sg.department
+	        ,std.student_name
+ 	       ,sg.department
 		,sg.class_name
-        ,sg.final_grade
-        ,DENSE_RANK() OVER (PARTITION BY sg.student_id ORDER BY sg.final_grade DESC) AS num
+		,sg.final_grade
+        	,DENSE_RANK() OVER (PARTITION BY sg.student_id ORDER BY sg.final_grade DESC) AS num
 	FROM
 		student_grades AS sg
 	LEFT JOIN
@@ -50,9 +50,9 @@ WITH std_gr AS (
 
 SELECT
 	student_id
-    ,student_name
-    ,final_grade AS top_grade
-    ,class_name
+	,student_name
+	,final_grade AS top_grade
+	,class_name
 FROM
 	std_gr
 WHERE
@@ -84,16 +84,16 @@ WITH st_gr AS (
 
 SELECT
 	department
-    ,ROUND(AVG(
+	,ROUND(AVG(
 		CASE WHEN grade_level = 9 THEN final_grade END
 		)) AS freshman
-    ,ROUND(AVG(
+	,ROUND(AVG(
 		CASE WHEN grade_level = 10 THEN final_grade END
 		)) AS junior
-    ,ROUND(AVG(
+	,ROUND(AVG(
 		CASE WHEN grade_level = 11 THEN final_grade END
 		)) AS sophomore
-    ,ROUND(AVG(
+	,ROUND(AVG(
 		CASE WHEN grade_level = 12 THEN final_grade END
 		)) AS senior
 FROM
@@ -115,8 +115,8 @@ as well as the cumulative sum of sales and the six-month moving average of sales
 
 WITH sales AS (
 	SELECT
-        MONTH(order_date) AS mnth
-        ,YEAR(order_date) AS yr
+		MONTH(order_date) AS mnth
+		,YEAR(order_date) AS yr
 		,SUM(ord.units * pd.unit_price) AS sale
 	FROM
 		orders AS ord
@@ -125,19 +125,19 @@ WITH sales AS (
 		ON ord.product_id = pd.product_id
 	GROUP BY
 		YEAR(order_date)
-        ,MONTH(order_date)
+		,MONTH(order_date)
 	ORDER BY
 		YEAR(order_date)
-        ,MONTH(order_date)
+		,MONTH(order_date)
 	)
 SELECT
-    *
-    ,SUM(sale) OVER(ORDER BY yr, mnth ) AS cumulative_sum
+	*
+	,SUM(sale) OVER(ORDER BY yr, mnth ) AS cumulative_sum
 	,ROUND(AVG(sale) OVER(ORDER BY yr, mnth 
 		ROWS BETWEEN 5 PRECEDING AND CURRENT ROW),2) 
 		AS six_month_ma
 FROM
-    sales;
+	sales;
 
 -- IMPUTING NULL Values
 SELECT
