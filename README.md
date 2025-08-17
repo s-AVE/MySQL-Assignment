@@ -7,21 +7,29 @@ This portfolio presents a collection of SQL queries developed as part of my lear
 The structure and flow of the SQL problems follow the curriculum designed by the [Maven Analytics team](https://www.udemy.com/user/maven-analytics), emphasizing practical, real-world applications of advanced SQL skills — including joins, subqueries, window functions, common table expressions (CTEs), recrusive CTE, conditional aggregation, function by data type, and implementation for data analytic.  
 This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.  
 
+We’ll start by reviewing the basics and conducting multi-table analyses, including basic joins, self-joins, cross-joins, and unions.  
+
+Next, we’ll cover different ways of working with nested queries by writing subqueries and common table expressions, or CTEs. We’ll walk through examples of subqueries within the various clauses, rewrite subqueries as CTEs, introduce recursive CTEs, and compare these techniques to other options like temporary tables and views.  
+
+From there, we’ll break down each component of a window function and review common window functions like ROW_NUMBER, RANK, FIRST_VALUE, LEAD, and LAG. We’ll also cover general functions for working with different data types in SQL, including numeric, datetime, string, and NULL functions.  
+
+Last but not least, we’ll take the concepts we’ve learned and use them across a series of common data analysis applications. We’ll deal with duplicate values, apply special value filters, perform rolling calculations, and more.  
+
 ## Table of Content
 📁 1. [Multi-table Analysis](#1-multi-table-analysis)  
-Basic Join and Self Join
+Review JOIN basics (INNER, LEFT, RIGHT, OUTER) and introduce variations like self joins, CROSS JOINs, and more.
 
 📁 2. [Subquery and CTE](#2-subquery-and-ctes)  
-Subqueries in the `SELECT` Clause, Subqueries in the `FROM` Clause, Subqueries in the `WHERE` Clause, CTE and Multiple CTE.
+Learn how to write subqueries and Common Table Expressions and understand the best situations for using certain techniques.
 
 📁 3. [Window Functions](#3-Window-functions)  
-Window Function Basic, Row Numbering, Value within a Window, Value Relative to a Row,  and Statistical Functions
+Introduce window functions to perform calculations across a set of rows and discuss various function options and applications.
 
 📁 4. [Funtions by Data Type](#4-functions-by-data-type)  
-Numeric Functions, Datetime Functions, String Functions, Pattern Functions, and NULL Functions
+Discover the many SQL functions that can be applied to fields of numeric, datetime, string, and NULL data types.
 
 📁 5. [Data Analysis Applications](#5-data-analysis-applications)  
-Duplicate Values, MIN/MAX Filtering, Pivoting, Rolling Calculations, Imputing NULL Values
+Apply advanced querying techniques to common data analysis scenarios, including pivoting data, rolling calculations, and more.
 
 ## 1. Multi-table Analysis
 - There are two ways to combine multiple tables into a single table for analysis:
