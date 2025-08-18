@@ -299,6 +299,6 @@ Apply advanced querying techniques to common data analysis scenarios, including 
      | ![](/assets/sec8.assignment4_query.png) | ![](/assets/sec8.assignment4_output.png) |
 
 
-
+_Source of Curriculum and Dataset: Maven Analytics_
 
 
