@@ -7,13 +7,13 @@ This portfolio presents a collection of SQL queries developed as part of my lear
 The structure and flow of the SQL problems follow the curriculum designed by the [Maven Analytics team](https://www.udemy.com/user/maven-analytics), emphasizing practical, real-world applications of advanced SQL skills — including joins, subqueries, window functions, common table expressions (CTEs), recrusive CTE, conditional aggregation, function by data type, and implementation for data analytic.  
 This repository serves both as a personal learning milestone and a reference point for others exploring advanced SQL practices using MySQL.  
 
-We’ll start by reviewing the basics and conducting multi-table analyses, including basic joins, self-joins, cross-joins, and unions.  
+I started by reviewing the basics and conducting multi-table analyses, including basic joins, self-joins, cross-joins, and unions.  
 
-Next, we’ll cover different ways of working with nested queries by writing subqueries and common table expressions, or CTEs. We’ll walk through examples of subqueries within the various clauses, rewrite subqueries as CTEs, introduce recursive CTEs, and compare these techniques to other options like temporary tables and views.  
+Next, I covered different ways of working with nested queries by writing subqueries and common table expressions (CTEs). I walked through examples of subqueries within the various clauses, rewrote subqueries as CTEs, introduced recursive CTEs, and compared these techniques to other options such as temporary tables and views.  
 
-From there, we’ll break down each component of a window function and review common window functions like ROW_NUMBER, RANK, FIRST_VALUE, LEAD, and LAG. We’ll also cover general functions for working with different data types in SQL, including numeric, datetime, string, and NULL functions.  
+From there, I broke down each component of a window function and reviewed common window functions like ROW_NUMBER, RANK, FIRST_VALUE, LEAD, and LAG. I also covered general functions for working with different data types in SQL, including numeric, datetime, string, and NULL functions.  
 
-Last but not least, we’ll take the concepts we’ve learned and use them across a series of common data analysis applications. We’ll deal with duplicate values, apply special value filters, perform rolling calculations, and more.  
+Last but not least, I took the concepts we had learned and applied them across a series of common data analysis applications. I dealt with duplicate values, applied special value filters, performed rolling calculations, and more.  
 
 ## Table of Content
 📁 1. [Multi-table Analysis](#1-multi-table-analysis)  
